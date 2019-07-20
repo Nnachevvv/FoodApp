@@ -1,5 +1,5 @@
-import java.util.Set;
-import java.util.SortedSet;
+import Models.Food;
+
 import java.util.TreeSet;
 
 public class FoodSystem {

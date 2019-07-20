@@ -1,3 +1,5 @@
+package Models;
+
 import org.jetbrains.annotations.NotNull;
 
 public class Food implements  Comparable<Food> {

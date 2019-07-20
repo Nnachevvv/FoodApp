@@ -1,3 +1,5 @@
+package Models;
+
 import java.io.*;
 public class Nutrient {
 
@@ -19,14 +21,14 @@ public class Nutrient {
 
     private void setCalories(double calories)
     {
-        if(calories >= 0)
+        if(calories < 0)
         {
-            this.calories = calories;
+            //TO DO validator class?
         }
-        else{
-            //TO DO: VALIDATE OUTPUT
-        }
+
+        this.calories = calories;
     }
+
 
 
     private void setCarbohydrates(double carbohydrates)

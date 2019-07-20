@@ -26,9 +26,14 @@ public class Food implements  Comparable<Food> {
         }
     }
 
+    public String getName() {
+        return this.name;
+    }
 
     @Override
     public int compareTo(@NotNull Food food) {
         return food.name.compareTo(this.name);
     }
+
+
 }

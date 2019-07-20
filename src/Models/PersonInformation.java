@@ -8,18 +8,18 @@ public class PersonInformation {
     private String name;
     private int age;
     private PhysicalActivity activity;
-    private Gender gender;
     private double calories_needed;
     private double height;
     private double weight;
+    private Gender gender;
 
-    public PersonInformation(String name ,int age ,int calories_needed,double height, double weight)
+    public PersonInformation(String name ,int age ,int calories_needed,double height, double weight,String gender)
     {
         setName(name);
         setAge(age);
         setCaloriesNeeded();
-        //setHeight();
-        //setWeight();
+        setHeight(height);
+        setWeight(weight);
     }
 
     private void setName(String name)
@@ -32,6 +32,21 @@ public class PersonInformation {
         {
             //TO DO VALIDATION
         }
+    }
+
+    private void setGender(String gender)
+    {
+        gender = gender.toLowerCase();
+        if(gender.equals("male"))
+        {
+            this.gender = Gender.MALE;
+        }else if(gender.equals("female"))
+        {
+            this.gender = Gender.FEMALE;
+        }else{
+
+        }
+
     }
 
     private void setAge(int age)
@@ -51,28 +66,28 @@ public class PersonInformation {
         {
             if(activity.equals(PhysicalActivity.LESS_THAN_3_TIMES))
             {
-                calories_needed =resting_energy * 1.11;
+                this.calories_needed =resting_energy * 1.11;
             }
             else if(activity.equals(PhysicalActivity.THREE_TO_FIVE))
             {
-                calories_needed =resting_energy * 1.25;
+                this.calories_needed =resting_energy * 1.25;
 
             }
             else{
-                calories_needed = resting_energy * 1.45;
+                this.calories_needed = resting_energy * 1.45;
             }
         }
         else{
             if(activity.equals(PhysicalActivity.LESS_THAN_3_TIMES))
             {
-                calories_needed =resting_energy * 1.12;
+                this.calories_needed =resting_energy * 1.12;
             }
             else if(activity.equals(PhysicalActivity.THREE_TO_FIVE))
             {
-                calories_needed =resting_energy * 1.27;
+                this.calories_needed =resting_energy * 1.27;
             }
             else{
-                calories_needed = resting_energy * 1.47;
+                this.calories_needed = resting_energy * 1.47;
             }
 
         }
@@ -92,4 +107,20 @@ public class PersonInformation {
     }
 
 
+    private void setHeight( double height)
+    {
+        if(height<0 || height>300)
+        {
+
+        }
+        this.height = height;
+    }
+    private void setWeight( double weight)
+    {
+        if(height<0 || height>700)
+        {
+
+        }
+        this.weight = weight;
+    }
 }

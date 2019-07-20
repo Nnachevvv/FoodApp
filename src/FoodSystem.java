@@ -1,20 +1,28 @@
 import Models.Food;
 
+import java.util.LinkedHashMap;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class FoodSystem {
 
 
-    private TreeSet<Food> foods;
+    private TreeMap<String,Food> foods;
 
     public FoodSystem()
     {
-        foods = new TreeSet<Food>();
+
+        foods = new TreeMap<>();
     }
 
     public void addFood(Food food)
     {
-        foods.add(food);
+        foods.put(food.getName(),food);
+    }
+
+    public Food getFood(String name)
+    {
+        return foods.get(name);
     }
 
 

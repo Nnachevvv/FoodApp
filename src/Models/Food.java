@@ -22,7 +22,7 @@ public class Food implements  Comparable<Food> {
         }
         else
         {
-            //TO DO VALIDATION
+            //TODO VALIDATION
         }
     }
 
@@ -35,5 +35,10 @@ public class Food implements  Comparable<Food> {
         return food.name.compareTo(this.name);
     }
 
+    @Override
+    public String toString()
+    {
+        return String.format(name + " " + nutrients.toString());
+    }
 
 }

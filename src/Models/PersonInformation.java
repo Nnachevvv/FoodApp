@@ -123,4 +123,18 @@ public class PersonInformation {
         }
         this.weight = weight;
     }
+
+    @Override
+    public String toString()
+    {
+        String genderPerson ;
+        if(gender.equals(Gender.MALE))
+        {
+            genderPerson = "Male";
+        }
+        else{
+            genderPerson = "Woman";
+        }
+        return String.format(name + " " + height + " " + weight + " " + age +" " + genderPerson);
+    }
 }

@@ -23,7 +23,7 @@ public class Nutrient {
     {
         if(calories < 0)
         {
-            //TO DO validator class?
+            //TODO validator class?
         }
 
         this.calories = calories;
@@ -38,7 +38,7 @@ public class Nutrient {
             this.carbohydrates = carbohydrates;
         }
         else{
-            //TO DO: VALIDATE OUTPUT
+            //TODO: VALIDATE OUTPUT
         }
     }
 
@@ -50,7 +50,7 @@ public class Nutrient {
             this.fats = fats;
         }
         else{
-            //TO DO: VALIDATE OUTPUT
+            //TODO: VALIDATE OUTPUT
         }
     }
 
@@ -62,8 +62,14 @@ public class Nutrient {
             this.protein = protein;
         }
         else{
-            //TO DO: VALIDATE OUTPUT
+            //TODO: VALIDATE OUTPUT
         }
+    }
+
+    @Override
+    public String toString()
+    {
+        return String.format(calories + " " + carbohydrates + " " + protein +" "+ fats);
     }
 
 }

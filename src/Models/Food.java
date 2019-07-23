@@ -30,6 +30,11 @@ public class Food implements  Comparable<Food> {
         return this.name;
     }
 
+    public double getCalories()
+    {
+        return this.nutrients.getCalories();
+    }
+
     @Override
     public int compareTo(@NotNull Food food) {
         return food.name.compareTo(this.name);

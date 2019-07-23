@@ -11,22 +11,22 @@ import java.util.LinkedList;
 public class Person {
 
     private PersonInformation personInformation;
-    private HashMap<LocalDate, ArrayList<Food>> foodEatenEveryDay;
+    private HashMap<LocalDate, ArrayList<Food>> foodEatPerDay;
 
     public Person(PersonInformation person)
     {
         this.personInformation = person;
-        foodEatenEveryDay = new HashMap<>();
+        foodEatPerDay = new HashMap<>();
     }
 
     public void addFoodEaten(String Name,Food food)
     {
-        if(!foodEatenEveryDay.containsKey(LocalDate.now()))
+        if(!foodEatPerDay.containsKey(LocalDate.now()))
         {
-            foodEatenEveryDay.put(LocalDate.now(),new ArrayList<>());
-            foodEatenEveryDay.get(LocalDate.now()).add(food);
+            foodEatPerDay.put(LocalDate.now(),new ArrayList<>());
+            foodEatPerDay.get(LocalDate.now()).add(food);
         }else{
-            foodEatenEveryDay.get(LocalDate.now()).add(food);
+            foodEatPerDay.get(LocalDate.now()).add(food);
         }
     }
 
@@ -36,17 +36,35 @@ public class Person {
         System.out.println(personInformation.toString());
         System.out.println(date);
 
-        if(!foodEatenEveryDay.containsKey(date))
+        if(!foodEatPerDay.containsKey(date))
         {
             System.out.println("No food eaten this day!");
         }
         else {
-            for (var foodEaten : foodEatenEveryDay.get(date)) {
+            for (var foodEaten : foodEatPerDay.get(date)) {
                 System.out.println(foodEaten.toString());
             }
         }
     }
 
+    public Integer calculateDateCalories(LocalDate date)
+    {
+        //TODO  print outside of class
+        int calories = 0;
+        if(!foodEatPerDay.containsKey(date))
+        {
+            return calories;
+        }
+        else {
+
+            for (Food food :
+                 foodEatPerDay.get(date)) {
+                calories += food.getCalories();
+            }
+        }
+        return calories;
+
+    }
 
 
 

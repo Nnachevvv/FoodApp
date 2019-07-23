@@ -31,17 +31,21 @@ public class Nutrient {
 
 
 
-    private void setCarbohydrates(double carbohydrates)
+    private boolean setCarbohydrates(double carbohydrates)
     {
         if(carbohydrates >= 0)
         {
             this.carbohydrates = carbohydrates;
+            return true;
         }
-        else{
-            //TODO: VALIDATE OUTPUT
-        }
+        return false;
+
     }
 
+    public double getCalories()
+    {
+        return this.calories;
+    }
 
     private void setFats(double fats)
     {
